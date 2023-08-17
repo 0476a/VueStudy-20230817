@@ -4,6 +4,16 @@ const app = Vue.createApp({
             courseGoal: '강의를 수료해 Vue 배우기!',
             vueLink: 'https://vuejs.org/'
         };
+    },
+    methods: {
+        outputGoal() {
+            const randomNumber  = Math.random();
+            if (randomNumber < 0.5) {
+                return 'Learn Vue!';
+            } else {
+                return 'Master Vue!';
+            }
+        }
     }
 });
 
