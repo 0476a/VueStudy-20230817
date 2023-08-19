@@ -2,17 +2,42 @@ const app = Vue.createApp({
   data() {
     return {
       counter: 0,
-      name: ''
+      name: '',
+      lastName: '',
+      // fullname: ''
     };
   },
-  // 메소드와 다르게 해당 되는 영역을 사용해야만 콘솔이 찍힘!
+  watch: {
+    counter(value) {
+      if(value > 50) {
+        const that = this;
+        setTimeout(function () {
+          that.counter = 0;
+        }, 2000);
+      }
+    }
+    //  name(value) {
+    //   if(value === '') {
+    //     this.fullname = '';
+    //   } else {
+    //     this.fullname = value + ' ' + this.lastName;
+    //   }
+    //  },
+    //  lastName(value) {
+    //   if(value === '') {
+    //     this.fullname = '';
+    //   } else {
+    //     this.fullname = this.name + ' ' + value;
+    //   }
+    //  }
+  },
   computed: {
     fullname() {
       console.log('Runnig again...');
-      if (this.name === '') {
+      if (this.name === '' || this.lastName === '') {
         return '';
       }
-      return this.name + ' ' + '사원';
+      return this.name + ' ' + this.lastName;
     }
   },
   methods: {
