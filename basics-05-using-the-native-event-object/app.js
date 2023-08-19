@@ -5,6 +5,7 @@ const app = Vue.createApp({
       name: ''
     };
   },
+  // 메소드와 다르게 해당 되는 영역을 사용해야만 콘솔이 찍힘!
   computed: {
     fullname() {
       console.log('Runnig again...');
