@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Lists and Conditional Content</h1>
+    </header>
+    <section id="assignment">
+      <h2>Assignment</h2>
+      <!-- 1) Add code to manage a list of tasks in a Vue app -->
+      <!-- Vue 앱에서 작업 목록을 관리하기 위한 코드 추가 -->
+      <!-- When clicking "Add Task" a new task with the entered text should be added -->
+      <!-- "작업 추가"를 클릭할 때 입력한 텍스트가 포함된 새 작업을 추가해야 합니다 -->
+      <input type="text" v-model="enteredValue">
+      <button @click="addTask">Add Task</button>
+      <ul v-if="taskListIsVisible">
+        <!-- 2) Output the list of tasks here -->
+        <!-- 여기서 작업 목록을 출력합니다. -->
+        <li v-for="task in tasks" :key="task">{{ task }}</li>
+      </ul>
+      <!-- 3) When the below button is pressed, the list should be shown or hidden -->
+      <!-- 아래 버튼을 누르면 목록이 표시되거나 숨겨져야 합니다 -->
+      <!-- BONUS: Also update the button caption -->
+      <!-- 보너스: 버튼 캡션도 업데이트합니다 -->
+      <button @click="toggleTaskList">{{ buttonCaption }}</button>
+    </section>
+  </body>
+</html>
