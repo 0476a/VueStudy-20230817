@@ -21,17 +21,17 @@ app.mount('#app');
 
 const data = {
   message: 'Hello!',
-  longMessage: 'Hello! World'
+  longMessage: 'Hello! World!'
 };
 
 const handler = {
   set(target, key, value) {
-    if(key === 'message') {
+    if (key === 'message') {
       target.longMessage = value + 'World!';
     }
     target.message = value;
   }
-}
+};
 
 const proxy = new Proxy(data, handler);
 
