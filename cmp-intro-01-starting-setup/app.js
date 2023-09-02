@@ -37,7 +37,7 @@ app.component('friend-contact', {
       detailsAreVisible: false,
       friend: {
         id: 'manuel',
-        name: 'Manuel Lorenz',
+        name: 'Manuel Lorenzo',
         phone: '01234 5678 991',
         email: 'manuel@localhost.com'
       },
